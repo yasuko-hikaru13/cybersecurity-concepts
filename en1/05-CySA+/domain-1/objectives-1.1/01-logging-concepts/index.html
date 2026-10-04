@@ -1,0 +1,82 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Logging Concepts | CompTIA CySA+ | LearnIT</title><link rel="stylesheet" href="../../../assets/style.css"><meta name="description" content="Learn Logging Concepts for CompTIA CySA+: definition, incident detection, investigations, compliance, system monitoring, and forensic evidence.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="__SITE_URL__/en/05-CySA+/domain-1/objectives-1.1/01-logging-concepts/index.html">
+<link rel="alternate" hreflang="pt" href="__SITE_URL__/pt/05-CySA+/domain-1/objectives-1.1/01-logging-concepts/index.html">
+<link rel="alternate" hreflang="en" href="__SITE_URL__/en/05-CySA+/domain-1/objectives-1.1/01-logging-concepts/index.html">
+<link rel="alternate" hreflang="x-default" href="__SITE_URL__/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LearnIT with HikaruAo">
+<meta property="og:title" content="Logging Concepts | CompTIA CySA+ | LearnIT">
+<meta property="og:description" content="Learn Logging Concepts for CompTIA CySA+: definition, incident detection, investigations, compliance, system monitoring, and forensic evidence.">
+<meta property="og:url" content="__SITE_URL__/en/05-CySA+/domain-1/objectives-1.1/01-logging-concepts/index.html">
+<meta property="og:image" content="__SITE_URL__/assets/og/495f6089e53d.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Logging Concepts | CompTIA CySA+ | LearnIT">
+<meta name="twitter:description" content="Learn Logging Concepts for CompTIA CySA+: definition, incident detection, investigations, compliance, system monitoring, and forensic evidence.">
+<meta name="twitter:image" content="__SITE_URL__/assets/og/495f6089e53d.svg">
+
+<style id="global-responsive">
+html{min-height:100%;overflow-x:hidden}body{min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+body>header{width:100%;flex:0 0 auto}body>main{width:100%;flex:1 0 auto}body>footer{width:100%;flex:0 0 auto;margin-top:auto}
+header .wrap,main.wrap,footer .wrap,.wrap{width:min(1120px,calc(100% - 32px));max-width:1120px;margin-left:auto;margin-right:auto}
+img,svg,video,canvas{max-width:100%;height:auto}pre,code{max-width:100%}pre{overflow-x:auto}
+.grid{min-width:0}.grid>*{min-width:0}.card{min-width:0;overflow-wrap:anywhere}
+@media(max-width:760px){
+ header .wrap,main.wrap,footer .wrap,.wrap{width:min(100% - 24px,1120px)}
+ header{min-height:auto}nav{height:auto!important;min-height:62px;padding:10px 0;gap:12px;flex-wrap:wrap}
+ .navlinks{width:100%;gap:14px!important;overflow-x:auto;padding-bottom:4px}
+ .hero{padding-top:58px!important;padding-bottom:48px!important}
+ .hero h1,h1{overflow-wrap:anywhere}
+ .grid{grid-template-columns:1fr!important}
+ .path{overflow-x:auto;flex-wrap:nowrap!important;padding-bottom:8px}
+ .path span{flex:0 0 auto}
+ footer .footer,.footer{flex-direction:column;align-items:flex-start!important;gap:8px!important}
+}
+@media(max-width:380px){header .wrap,main.wrap,footer .wrap,.wrap{width:min(100% - 18px,1120px)}}
+</style>
+<style id="original-logging-art-style">
+.edu-art{margin:34px 0;border:1px solid #28333f;border-radius:16px;background:linear-gradient(145deg,#111820,#151b23);overflow:hidden}
+.edu-art-head{padding:20px 24px 0}.edu-art-head h3{margin:6px 0;font-size:20px}.edu-art-head p{color:#93a1ad;margin:0;line-height:1.55;font-size:14px}
+.edu-art svg{display:block;width:100%;height:auto;max-height:420px;margin-top:8px}
+.edu-art .box{fill:#10161d;stroke:#34414e;stroke-width:2}.edu-art .accent{stroke:#9fef00}.edu-art .soft{fill:#9fef00;fill-opacity:.08;stroke:#9fef00;stroke-opacity:.5}.edu-art .wire{fill:none;stroke:#52616f;stroke-width:2;stroke-dasharray:7 7;animation:dash 10s linear infinite}.edu-art text{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.edu-art .t1{fill:#eef3f6;font-size:18px;font-weight:700}.edu-art .t2{fill:#93a1ad;font-size:13px}.edu-art .green{fill:#9fef00}.edu-art .pulse{animation:pulse 2.3s ease-in-out infinite;transform-origin:center}.edu-art .scan{animation:scan 4s ease-in-out infinite}
+@keyframes dash{to{stroke-dashoffset:-70}}@keyframes pulse{50%{opacity:.35}}@keyframes scan{50%{transform:translateY(78px)}}
+@media(max-width:600px){.edu-art-head{padding:17px 17px 0}.edu-art svg{min-width:620px;width:620px}.edu-art{overflow-x:auto}}
+@media(prefers-reduced-motion:reduce){.edu-art *{animation:none!important}}
+</style></head><body><header><div class="wrap"><b>HIKARU<span class="green">/ CySA+</span></b></div><a href="../../../../../pt/05-CySA+/domain-1/objectives-1.1/01-logging-concepts/index.html" style="float:right;color:#9fef00;text-decoration:none;font:600 13px monospace">PT</a></header><main class="wrap"><style id="logging-concepts-style">
+.lesson{padding:36px 0 80px}.lesson-intro{display:grid;grid-template-columns:1.35fr .65fr;gap:20px;align-items:stretch}
+.definition,.log-visual,.reason{border:1px solid #28333f;border-radius:14px;background:#151b23}
+.definition{padding:28px}.kicker{font:700 12px ui-monospace,monospace;letter-spacing:.13em;color:#9fef00}
+.definition h2,.why h2{font-size:clamp(26px,4vw,38px);margin:12px 0 15px}.definition p{font-size:17px;line-height:1.75;color:#b3bec8;margin:0}
+.log-visual{padding:24px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;min-height:220px}
+.terminal{font:12px/1.7 ui-monospace,monospace;color:#93a1ad}.terminal b{color:#9fef00}.terminal .line{opacity:0;animation:logline 5s infinite}.terminal .line:nth-child(2){animation-delay:.6s}.terminal .line:nth-child(3){animation-delay:1.2s}.terminal .line:nth-child(4){animation-delay:1.8s}.terminal .line:nth-child(5){animation-delay:2.4s}
+@keyframes logline{0%,10%{opacity:0;transform:translateX(-8px)}20%,85%{opacity:1;transform:none}100%{opacity:0}}
+.why{margin-top:42px}.why>p{color:#93a1ad;max-width:720px;line-height:1.7}.reasons{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:22px}
+.reason{padding:20px;min-height:180px;transition:.2s}.reason:hover{transform:translateY(-4px);border-color:rgba(159,239,0,.7)}
+.reason svg{width:42px;height:42px;fill:none;stroke:#9fef00;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.reason h3{font-size:15px;margin:18px 0 8px}.reason p{font-size:13px;line-height:1.55;color:#93a1ad;margin:0}
+.flow{margin-top:42px;padding:25px;border:1px solid #28333f;border-radius:14px}.flow h3{margin:0 0 20px}.flowline{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;align-items:center}.node{text-align:center;padding:15px 10px;border:1px solid #28333f;border-radius:9px;background:#10161d;font:700 12px ui-monospace,monospace}.node:not(:last-child):after{content:"→";position:absolute}.note{margin-top:24px;color:#93a1ad;font-size:13px}
+@media(max-width:900px){.reasons{grid-template-columns:repeat(2,1fr)}.lesson-intro{grid-template-columns:1fr}.flowline{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.reasons,.flowline{grid-template-columns:1fr}.definition{padding:21px}.lesson{padding-top:24px}.reason{min-height:0}}
+@media(prefers-reduced-motion:reduce){.terminal .line{opacity:1;animation:none}}
+</style><section class="lesson"><div class="lesson-intro"><article class="definition"><div class="kicker">DEFINITION</div><h2>Logging Concepts</h2><p>Logging is the process of recording events and activities occurring on systems, applications, network devices, and security tools for monitoring, investigation, troubleshooting, and incident response.</p></article><aside class="log-visual"><div class="kicker">EVENT EXAMPLE</div><div class="terminal"><div class="line"><b>10:42:01</b> auth.login user=analyst status=success</div><div class="line"><b>10:42:08</b> firewall src=10.0.2.15 action=allow</div><div class="line"><b>10:42:11</b> endpoint process=powershell.exe</div><div class="line"><b>10:42:14</b> dns query=example.local</div><div class="line"><b>10:42:19</b> siem event=correlated severity=high</div></div></aside></div><section class="edu-art"><div class="edu-art-head"><div class="kicker">VISUAL MODEL</div><h3>How logs reach analysis</h3><p>Original illustration: multiple sources generate events, which are collected and centralized before analysis.</p></div>
+<svg viewBox="0 0 1000 410" role="img" aria-label="How logs reach analysis">
+<rect class="box" x="45" y="70" rx="10" width="180" height="52"/><circle class="soft pulse" cx="70" cy="96" r="9"/><text class="t1" x="91" y="102">SYSTEM</text><path class="wire" d="M225 96 C315 96,300 196,385 196"/><rect class="box" x="45" y="145" rx="10" width="180" height="52"/><circle class="soft pulse" cx="70" cy="171" r="9"/><text class="t1" x="91" y="177">APPLICATION</text><path class="wire" d="M225 171 C315 171,300 196,385 196"/><rect class="box" x="45" y="220" rx="10" width="180" height="52"/><circle class="soft pulse" cx="70" cy="246" r="9"/><text class="t1" x="91" y="252">NETWORK</text><path class="wire" d="M225 246 C315 246,300 196,385 196"/><rect class="box" x="45" y="295" rx="10" width="180" height="52"/><circle class="soft pulse" cx="70" cy="321" r="9"/><text class="t1" x="91" y="327">SECURITY</text><path class="wire" d="M225 321 C315 321,300 196,385 196"/>
+<rect class="soft" x="385" y="151" rx="14" width="180" height="90"/><text class="t1 green" x="425" y="190">INGESTION</text><text class="t2" x="421" y="216">logs → normalize</text>
+<path class="wire accent" d="M565 196H655"/>
+<rect class="box accent" x="655" y="151" rx="14" width="135" height="90"/><text class="t1 green" x="695" y="190">SIEM</text><text class="t2" x="679" y="216">correlation</text>
+<path class="wire accent" d="M790 196H845"/>
+<circle class="soft pulse" cx="900" cy="196" r="49"/><text class="t1" x="861" y="202">ANALYSIS</text>
+<text class="t2" x="44" y="382">EVENT SOURCES</text><text class="t2" x="384" y="382">COLLECT</text><text class="t2" x="655" y="382">CENTRALIZE</text><text class="t2" x="847" y="382">DECIDE</text>
+</svg></section><section class="why"><div class="kicker">SECURITY OPERATIONS</div><h2>Why Logging Matters</h2><p>Logs turn technical activity into observable evidence. In security operations, they help establish what happened, when it happened, and which systems or identities were involved.</p><div class="reasons"><article class="reason"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="28" cy="28" r="17"/><path d="m41 41 13 13M28 18v11l7 5"/></svg><h3>Detect security incidents</h3><p>Identify suspicious behavior, failed authentication, unexpected changes, and other indicators of attack.</p></article><article class="reason"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="26" cy="26" r="15"/><path d="m37 37 16 16M20 21h12M20 27h8"/></svg><h3>Support investigations</h3><p>Reconstruct event sequences and correlate activity across systems, users, and devices.</p></article><article class="reason"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 7 51 14v15c0 13-8 23-19 28C21 52 13 42 13 29V14z"/><path d="m23 31 6 6 13-14"/></svg><h3>Meet compliance requirements</h3><p>Maintain records required for audits, internal policies, and regulatory requirements.</p></article><article class="reason"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 34h11l5-13 9 27 7-18 5 4h11"/><path d="M15 15h34v34H15z" opacity=".18"/></svg><h3>Monitor system health</h3><p>Observe errors, availability, performance, and abnormal infrastructure behavior.</p></article><article class="reason"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M17 9h24l8 8v38H17z"/><path d="M41 9v10h10M24 28h18M24 36h13M24 44h16"/></svg><h3>Provide forensic evidence</h3><p>Preserve information that can support post-incident analysis and event reconstruction.</p></article></div></section><section class="edu-art"><div class="edu-art-head"><div class="kicker">FORENSIC CONTEXT</div><h3>From event to evidence</h3><p>Original investigation illustration: events are correlated on a timeline to produce context and evidence.</p></div>
+<svg viewBox="0 0 1000 390" role="img" aria-label="From event to evidence">
+<rect class="box" x="55" y="68" rx="14" width="890" height="250"/>
+<text class="t1 green" x="90" y="110">EVENTS</text>
+<line x1="105" y1="205" x2="850" y2="205" stroke="#52616f" stroke-width="3"/>
+<circle class="soft" cx="190" cy="205" r="14"/><circle class="soft" cx="370" cy="205" r="14"/><circle class="soft pulse" cx="555" cy="205" r="18"/><circle class="soft" cx="735" cy="205" r="14"/>
+<text class="t2" x="145" y="247">10:42 login</text><text class="t2" x="319" y="247">10:43 network</text><text class="t2" x="500" y="247">10:44 process</text><text class="t2" x="687" y="247">10:45 alert</text>
+<rect class="soft" x="822" y="142" rx="10" width="90" height="126"/><path d="M844 170h46M844 190h35M844 210h42M844 230h28" stroke="#9fef00" stroke-width="3" stroke-linecap="round"/>
+<text class="t1" x="440" y="294">TIMELINE</text><text class="t1 green" x="805" y="304">EVIDENCE</text>
+<rect class="scan" x="535" y="142" width="4" height="50" fill="#9fef00" opacity=".6"/>
+</svg></section><section class="flow"><h3>Basic logging flow</h3><div class="flowline"><div class="node">Event source</div><div class="node">Log generation</div><div class="node">Collection / Ingestion</div><div class="node">Analysis / SIEM</div></div><div class="note">Key concept: an isolated log may provide limited context; its value increases when events are centralized, normalized, and correlated.</div></section></section></main></body></html>
