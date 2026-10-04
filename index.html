@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LearnIT with HikaruAo</title>
+<style>
+:root{--bg:#0d1117;--panel:#151b23;--line:#28333f;--text:#eef3f6;--muted:#93a1ad;--green:#9fef00}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+body{min-height:100vh;display:grid;place-items:center;overflow:hidden}
+.scene{position:fixed;inset:0;overflow:hidden;pointer-events:none;background:radial-gradient(circle at 50% 35%,rgba(159,239,0,.07),transparent 35%)}
+.grid{position:absolute;inset:-40%;background-image:linear-gradient(rgba(159,239,0,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(159,239,0,.035) 1px,transparent 1px);background-size:46px 46px;transform:perspective(500px) rotateX(60deg) translateY(20%);animation:grid 14s linear infinite}
+@keyframes grid{to{background-position:0 46px,46px 0}}
+.orbit{position:absolute;width:520px;height:520px;left:50%;top:50%;margin:-260px;border:1px solid rgba(159,239,0,.12);border-radius:50%;animation:spin 28s linear infinite}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(159,239,0,.08);border-radius:50%;inset:55px}.orbit:after{inset:125px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.word{position:absolute;font:700 11px ui-monospace,monospace;letter-spacing:.18em;color:rgba(159,239,0,.19);animation:float var(--time) ease-in-out var(--delay) infinite alternate}
+@keyframes float{to{transform:translate(20px,-32px);opacity:.75}}
+.shell{position:relative;z-index:2;width:min(650px,calc(100% - 32px));padding:46px;text-align:center;border:1px solid var(--line);border-radius:16px;background:rgba(13,17,23,.84);backdrop-filter:blur(13px);box-shadow:0 28px 80px rgba(0,0,0,.35)}
+.prompt{color:var(--green);font:700 12px ui-monospace,monospace;letter-spacing:.14em}
+h1{font-size:clamp(36px,7vw,62px);letter-spacing:-.055em;line-height:1;margin:20px 0 14px}
+p{color:var(--muted);line-height:1.65;margin:0 auto;max-width:470px}
+.langs{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:34px}
+.lang{position:relative;padding:19px 16px;border:1px solid var(--line);border-radius:10px;background:var(--panel);text-decoration:none;color:var(--text);transition:.22s;overflow:hidden}
+.lang strong{display:block;font-size:18px}.lang span{display:block;color:var(--muted);font-size:12px;margin-top:5px}
+.lang:after{content:"→";position:absolute;right:15px;top:15px;color:#61707c;transition:.2s}
+.lang:hover{transform:translateY(-4px);border-color:var(--green)}.lang:hover:after{color:var(--green);transform:translateX(3px)}
+.cursor{display:inline-block;width:8px;height:14px;background:var(--green);vertical-align:-2px;margin-left:5px;animation:blink .8s steps(1) infinite}@keyframes blink{50%{opacity:0}}
+@media(max-width:560px){.shell{padding:34px 20px}.langs{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<meta name="description" content="LearnIT with HikaruAo ALGORITHMS SECURITY NETWORKS LOGIC 0x01 0x10 API SIEM · LOGS LINUX / CLOUD IF → THEN → EXECUTE &gt; LEARNIT_WITH_HIKARUAO Choose your…">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="__SITE_URL__/">
+<link rel="alternate" hreflang="pt" href="__SITE_URL__/index.html">
+<link rel="alternate" hreflang="en" href="__SITE_URL__/index.html">
+<link rel="alternate" hreflang="x-default" href="__SITE_URL__/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LearnIT with HikaruAo">
+<meta property="og:title" content="Choose your path.">
+<meta property="og:description" content="LearnIT with HikaruAo ALGORITHMS SECURITY NETWORKS LOGIC 0x01 0x10 API SIEM · LOGS LINUX / CLOUD IF → THEN → EXECUTE &gt; LEARNIT_WITH_HIKARUAO Choose your…">
+<meta property="og:url" content="__SITE_URL__/">
+<meta property="og:image" content="__SITE_URL__/assets/og/f6013a00b362.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Choose your path.">
+<meta name="twitter:description" content="LearnIT with HikaruAo ALGORITHMS SECURITY NETWORKS LOGIC 0x01 0x10 API SIEM · LOGS LINUX / CLOUD IF → THEN → EXECUTE &gt; LEARNIT_WITH_HIKARUAO Choose your…">
+<meta name="twitter:image" content="__SITE_URL__/assets/og/f6013a00b362.svg">
+
+<style id="global-responsive">
+html{min-height:100%;overflow-x:hidden}body{min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+body>header{width:100%;flex:0 0 auto}body>main{width:100%;flex:1 0 auto}body>footer{width:100%;flex:0 0 auto;margin-top:auto}
+header .wrap,main.wrap,footer .wrap,.wrap{width:min(1120px,calc(100% - 32px));max-width:1120px;margin-left:auto;margin-right:auto}
+img,svg,video,canvas{max-width:100%;height:auto}pre,code{max-width:100%}pre{overflow-x:auto}
+.grid{min-width:0}.grid>*{min-width:0}.card{min-width:0;overflow-wrap:anywhere}
+@media(max-width:760px){
+ header .wrap,main.wrap,footer .wrap,.wrap{width:min(100% - 24px,1120px)}
+ header{min-height:auto}nav{height:auto!important;min-height:62px;padding:10px 0;gap:12px;flex-wrap:wrap}
+ .navlinks{width:100%;gap:14px!important;overflow-x:auto;padding-bottom:4px}
+ .hero{padding-top:58px!important;padding-bottom:48px!important}
+ .hero h1,h1{overflow-wrap:anywhere}
+ .grid{grid-template-columns:1fr!important}
+ .path{overflow-x:auto;flex-wrap:nowrap!important;padding-bottom:8px}
+ .path span{flex:0 0 auto}
+ footer .footer,.footer{flex-direction:column;align-items:flex-start!important;gap:8px!important}
+}
+@media(max-width:380px){header .wrap,main.wrap,footer .wrap,.wrap{width:min(100% - 18px,1120px)}}
+</style>
+</head>
+<body>
+<div class="scene" aria-hidden="true">
+ <div class="grid"></div><div class="orbit"></div>
+ <span class="word" style="left:8%;top:16%;--time:8s;--delay:-2s">ALGORITHMS</span>
+ <span class="word" style="left:76%;top:18%;--time:10s;--delay:-4s">SECURITY</span>
+ <span class="word" style="left:12%;top:72%;--time:11s;--delay:-5s">NETWORKS</span>
+ <span class="word" style="left:80%;top:75%;--time:9s;--delay:-1s">LOGIC</span>
+ <span class="word" style="left:5%;top:43%;--time:12s;--delay:-7s">0x01 0x10 API</span>
+ <span class="word" style="left:84%;top:48%;--time:8s;--delay:-3s">SIEM · LOGS</span>
+ <span class="word" style="left:44%;top:8%;--time:10s;--delay:-6s">LINUX / CLOUD</span>
+ <span class="word" style="left:43%;top:88%;--time:9s;--delay:-4s">IF → THEN → EXECUTE</span>
+</div>
+<main class="shell">
+ <div class="prompt">&gt; LEARNIT_WITH_HIKARUAO<span class="cursor"></span></div>
+ <h1>Choose your path.</h1>
+ <p>TI · Cybersecurity · Networks · Logic · Algorithms<br>Escolha o idioma para entrar na knowledge base.</p>
+ <div class="langs">
+   <a class="lang" href="./pt/index.html"><strong>Português</strong><span>Entrar em PT</span></a>
+   <a class="lang" href="./en/index.html"><strong>English</strong><span>Enter in EN</span></a>
+ </div>
+</main>
+</body></html>

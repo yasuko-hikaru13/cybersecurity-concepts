@@ -1,0 +1,29 @@
+LEVEL 1 — Knowledge Base
+/
+├── 01-Tech+/
+├── 02-A+/
+├── 03-Network+/
+├── 04-Security+/
+├── 05-CySA+/
+│   ├── domain-1/
+│   │   └── objectives-1.1/
+│   │       ├── 01-logging-concepts/
+│   │       ├── 02-log-ingestion/
+│   │       ├── 03-log-configuration/
+│   │       ├── 04-log-integrity-and-security/
+│   │       ├── 05-time-synchronization/
+│   │       ├── 06-log-retention/
+│   │       ├── 07-operating-system-concepts/
+│   │       ├── 08-infrastructure-system-architecture-concepts/
+│   │       ├── 09-cloud-native/
+│   │       ├── 10-virtualization/
+│   │       ├── 11-containerization/
+│   │       └── 12-application-programming-interfaces/
+│   ├── domain-2/
+│   ├── domain-3/
+│   └── domain-4/
+├── PenTest+/
+└── SecurityX/
+
+Navigation:
+Home -> 05-CySA+ -> Domain -> Objective -> Topic

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#0d1117"/>
+<defs><pattern id="g" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#9fef00" stroke-opacity=".055"/></pattern><radialGradient id="r"><stop stop-color="#9fef00" stop-opacity=".13"/><stop offset="1" stop-color="#9fef00" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="630" fill="url(#g)"/><circle cx="1000" cy="80" r="360" fill="url(#r)"/>
+<text x="88" y="105" font-family="monospace" font-size="22" font-weight="700" letter-spacing="3" fill="#9fef00">LEARNIT WITH HIKARUAO · PT</text>
+<text x="88" y="178" font-family="Arial,sans-serif" font-size="25" fill="#93a1ad">Knowledge Base / Learning Path</text>
+<text x="88" y="315" font-size="58" font-weight="800" fill="#f2f5f7">3.0 Resposta e Gestão de</text><text x="88" y="387" font-size="58" font-weight="800" fill="#f2f5f7">Incidentes</text>
+<line x1="88" y1="535" x2="1112" y2="535" stroke="#28333f"/>
+<text x="88" y="580" font-family="monospace" font-size="20" fill="#93a1ad">IT · CYBERSECURITY · NETWORKS · LOGIC · ALGORITHMS</text>
+</svg>
